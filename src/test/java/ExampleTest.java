@@ -30,7 +30,7 @@ public class ExampleTest extends BaseTest {
     }
 
     @Test
-    public void bearWithValidParametersStoresCorrectlyAfterCreation() {
+    public void bearWithValidParametersAfterCreation() {
         Specifications.installSpecification(Specifications.requestSpec(BASE_URI),
                 Specifications.responseSpecOK200());
         Bear expectedBear = bearCreation.createAnyTypeBear(BearType.POLAR);
@@ -42,7 +42,7 @@ public class ExampleTest extends BaseTest {
     }
 
     @Test
-    public void listOfBearsWithValidParametersStoresCorrectlyAfterCreation() {
+    public void listOfBearsWithValidParametersAfterCreation() {
         Specifications.installSpecification(Specifications.requestSpec(BASE_URI),
                 Specifications.responseSpecOK200());
 
@@ -59,7 +59,7 @@ public class ExampleTest extends BaseTest {
     }
 
     @Test
-    public void listOfBearsAfterDeletionOfAllBearsHasSize0() {
+    public void listOfBearsAfterDeletionOfAllBearsHasSize_0() {
         Specifications.installSpecification(Specifications.requestSpec(BASE_URI),
                 Specifications.responseSpecOK200());
         List<Bear> expectedListOfBears = bearCreation.createListOfBear();
@@ -75,7 +75,7 @@ public class ExampleTest extends BaseTest {
 
 
     @Test
-    public void readingSpecificBearAfterDeletionReturnsMessageEmpty() {
+    public void readingSpecificBearAfterDeleteReturnsMessageEmpty() {
         Specifications.installSpecification(Specifications.requestSpec(BASE_URI),
                 Specifications.responseSpecOK200());
         Bear bear = bearCreation.createAnyTypeBear(BearType.BROWN);
@@ -89,9 +89,9 @@ public class ExampleTest extends BaseTest {
                 responseBodyOfReadingBear, equalTo(EMPTY));
     }
 
-
+    // This test shows a defect
     @Test
-    public void bearCanBeUpdated() {
+    public void bearCanbeUpdated() {
         Specifications.installSpecification(Specifications.requestSpec(BASE_URI),
                 Specifications.responseSpecOK200());
         Bear expectedBear = bearCreation.createAnyTypeBear(BearType.POLAR);
